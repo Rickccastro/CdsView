@@ -1,0 +1,3 @@
+define view entity buffer on ZI_CDS_PRODUCT
+  layer core
+  type single

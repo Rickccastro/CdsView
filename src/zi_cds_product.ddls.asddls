@@ -2,6 +2,8 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Basic - Produto'
 @Metadata.ignorePropagatedAnnotations: true
+
+@AbapCatalog.entityBuffer.definitionAllowed: true
 define view entity ZI_CDS_PRODUCT
   as select from zrickt_product
 {
