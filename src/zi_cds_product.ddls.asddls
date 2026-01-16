@@ -4,7 +4,7 @@
 @Metadata.ignorePropagatedAnnotations: true
 
 @AbapCatalog.entityBuffer.definitionAllowed: true
-define view entity ZI_CDS_PRODUCT
+define root view entity ZI_CDS_PRODUCT
   as select from zrickt_product
 {
   key product             as Product,
