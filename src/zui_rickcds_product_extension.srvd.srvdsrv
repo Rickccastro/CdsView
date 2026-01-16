@@ -1,0 +1,3 @@
+extend service ZUI_RICKCDS_PRODUCT with {
+  expose ZC_CDS_PRODUCT_TEXT as ZZ1PRODUCT_TEXT;
+}
