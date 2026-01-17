@@ -1,11 +1,12 @@
 @AbapCatalog.viewEnhancementCategory: [#NONE]
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Cubo - Visão Itens Pedido'
+@EndUserText.label: 'Cubo - Visão Itens Pedido com Calendario'
 @Metadata.ignorePropagatedAnnotations: false
 @Analytics.dataCategory: #CUBE
-define view entity ZI_RICKCDS_ORDERITEM_PROD as select from ZI_CDS_ORDERITITEM_PRODUCT
+define view entity ZI_RICKCDS_ORDERITEM_PROD2 as select from ZI_CDS_ORDERITITEM_PRODUCT
+association [0..1] to I_CalendarDate as _CreationDate on $projection.CreationDate = _CreationDate.CalendarDate
 {
-    @EndUserText.label: 'Ordem Venda'
+@EndUserText.label: 'Ordem Venda'
     key SalesOrder,
     @EndUserText.label: 'Item Venda'
     key SalesOrderItem,
@@ -23,6 +24,13 @@ define view entity ZI_RICKCDS_ORDERITEM_PROD as select from ZI_CDS_ORDERITITEM_P
     TotalValue,
     @EndUserText.label: 'Moeda'
     Currency,
+    @EndUserText.label: 'Data Criação'
+    CreationDate,
+    _CreationDate.CalendarYear as CreationYear,
+    _CreationDate.WeekDay,    
     /* Associations */
-    _Product
+    _Product,
+    _CreationDate,
+    _CreationDate._CalendarYear,
+    _CreationDate._WeekDay
 }
