@@ -1,0 +1,4 @@
+@EndUserText.label: 'UI-Produto OdataAPI'
+define service ZUI_RICKCDS_ODATA_API_PRODUCT {
+  expose ZI_CDS_PRODUCT;
+}
