@@ -1,0 +1,25 @@
+CLASS zcl_rickcds_tf_country DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    INTERFACES if_amdp_marker_hdb.
+
+    CLASS-METHODS get_countries FOR TABLE FUNCTION ZTF_RICKCDS_COUNTRY.
+
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_rickcds_tf_country IMPLEMENTATION.
+     METHOD get_countries BY DATABASE FUNCTION FOR HDB LANGUAGE
+     SQLSCRIPT OPTIONS READ-ONLY USING I_COUNTRY.
+
+    RETURN SELECT p_sapclient as mandt, Country FROM I_Country  WHERE mandt = :p_sapclient;
+
+
+    ENDMETHOD.
+ENDCLASS.
