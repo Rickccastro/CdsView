@@ -1,0 +1,11 @@
+@EndUserText.label: 'Access control para Pedido'
+@MappingRole: true
+define role ZR_RICKCDS_SALESORDER {
+    grant
+        select
+            on
+                ZR_RICKCDS_SALESORDER
+                    where
+                      inheriting conditions from entity 
+                      ZI_RICKCDS_ORDER;                        
+}

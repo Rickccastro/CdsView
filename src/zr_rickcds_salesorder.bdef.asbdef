@@ -1,0 +1,26 @@
+managed implementation in class zbp_r_rickcds_salesorder unique;
+strict ( 2 );
+
+define behavior for ZR_RICKCDS_SALESORDER //alias <alias_name>
+persistent table zrickt_order
+lock master
+authorization master ( instance, global )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+  association _Item { create; }
+}
+
+define behavior for ZR_RICKCDS_SALESORDER_IT //alias <alias_name>
+persistent table zrickt_order_it
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) SalesOrder;
+  association _Header;
+}
