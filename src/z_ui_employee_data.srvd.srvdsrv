@@ -1,0 +1,4 @@
+@EndUserText.label: 'test for bug'
+define service Z_UI_EMPLOYEE_DATA {
+  expose Z_C_EMPLOYEE_DATA;
+}

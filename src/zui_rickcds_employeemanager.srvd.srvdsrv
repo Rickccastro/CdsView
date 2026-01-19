@@ -1,0 +1,4 @@
+@EndUserText.label: 'UI Employee e Manager'
+define service ZUI_RICKCDS_EMPLOYEEMANAGER {
+  expose ZC_RICKCDS_EMPLOYEE;
+}

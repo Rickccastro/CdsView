@@ -1,0 +1,4 @@
+@EndUserText.label: 'test for bug2'
+define service ZDH_SD_OrderItem_ {
+  expose ZDH_C_OrderItemTP;
+}
